@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1 style="font-size: 500px; text-align: center; font-family: monospace; margin: 0px;"></h1>
+    <script>
+    
+    const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    let white = true;
+        
+    setInterval(generateRandomLetter, 7000);
+    
+    function generateRandomLetter(){
+        const letter = Math.floor((Math.random() * 25) + 1)
+        changeHtml(alphabet[letter]);
+    }   
+        
+    function changeHtml(letter){
+        document.querySelector('h1').innerHTML = letter;
+        changeColor();
+    }
+    
+    function changeColor(){
+        if(white === true){
+            document.querySelector('body').style.background = 'black';
+            document.querySelector('h1').style.color = 'white';
+            white = false;
+        }else{
+            document.querySelector('body').style.background = 'white';
+            document.querySelector('h1').style.color = 'black';
+            white = true;
+        }
+    }
+    </script>
+    </body>
+    
+</html>
